@@ -26,9 +26,15 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@mixmaxhq/prettier-config": "^1.0.0",
+    "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.6.0",
     "eslint-config-mixmax": "^3.4.0",
     "prettier": "^1.18.2",
     "semantic-release": "^15.13.27"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
