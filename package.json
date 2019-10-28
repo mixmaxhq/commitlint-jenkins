@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "ci": "npm run lint && npm run commitlint",
-    "commitlint": "if [ \"$CI\" != '' ]; then node .; fi",
+    "commitlint": "if [ \"$CI\" != '' ]; then node .; else commitlint --from HEAD; fi",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
