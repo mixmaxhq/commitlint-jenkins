@@ -1,17 +1,19 @@
 {
   "name": "@mixmaxhq/commitlint-jenkins",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Lint all relevant commits for a change or PR on Jenkins CI",
   "main": "src/index.js",
   "scripts": {
     "ci": "npm run lint && npm run commitlint",
     "commitlint": "if [ \"$CI\" != '' ]; then node .; else commitlint --from HEAD; fi",
     "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublishOnly": "if [ \"$CI\" = '' ]; then node -p 'JSON.parse(process.env.npm_package_config_manualPublishMessage)'; exit 1; fi",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/mixmaxhq/commitlint-jenkins.git"
+    "url": "https://github.com/mixmaxhq/commitlint-jenkins.git"
   },
   "author": "Eli Skeggs <eli@mixmax.com> (https://mixmax.com)",
   "license": "MIT",
@@ -30,11 +32,15 @@
     "eslint": "^6.6.0",
     "eslint-config-mixmax": "^3.4.0",
     "prettier": "^1.18.2",
-    "semantic-release": "^15.13.27"
+    "semantic-release": "^15.13.28"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
-    }
+    },
+    "manualPublishMessage": "This repository is configured to use semantic-release for its releases. Please do not release manually.\n"
+  },
+  "publishConfig": {
+    "access": "restricted"
   }
 }
