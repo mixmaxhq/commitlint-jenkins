@@ -1,0 +1,6 @@
+{
+  "extends": ["mixmax/node", "mixmax/prettier"],
+  "rules": {
+    "no-console": "off"
+  }
+}
