@@ -3,6 +3,9 @@
   "version": "0.0.0-development",
   "description": "Lint all relevant commits for a change or PR on Jenkins CI",
   "main": "src/index.js",
+  "files": [
+    "src"
+  ],
   "scripts": {
     "ci": "npm run lint && npm run commitlint",
     "commitlint": "if [ \"$CI\" != '' ]; then node .; else commitlint --from HEAD; fi",
