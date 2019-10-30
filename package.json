@@ -7,9 +7,8 @@
     "src"
   ],
   "scripts": {
-    "ci": "npm run lint && npm run commitlint",
-    "commitlint": "if [ \"$CI\" != '' ]; then node .; else commitlint --from HEAD; fi",
-    "lint": "eslint .",
+    "ci": "npm run lint",
+    "lint": "eslint . && node . --if-ci",
     "prepublishOnly": "if [ \"$CI\" = '' ]; then node -p 'JSON.parse(process.env.npm_package_config_manualPublishMessage)'; exit 1; fi",
     "test": "echo \"Error: no test specified\" && exit 1",
     "semantic-release": "semantic-release"
@@ -25,7 +24,8 @@
   },
   "homepage": "https://github.com/mixmaxhq/commitlint-jenkins#readme",
   "dependencies": {
-    "execa": "^3.2.0"
+    "execa": "^3.2.0",
+    "yargs": "^14.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
