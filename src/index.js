@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 const execa = require('execa');
+const argv = require('yargs').argv;
 const commitlint = require('@commitlint/cli');
+
+const IF_CI = !!argv.ifCi;
 
 // Allow to override used bins for testing purposes
 const GIT = process.env.JENKINS_COMMITLINT_GIT_BIN || 'git';
@@ -23,7 +26,9 @@ main().catch((err) => {
 });
 
 async function main() {
-  validate();
+  if (!validate()) {
+    return;
+  }
 
   // Lint all commits on the branch if available
   if (IS_PR) {
@@ -60,6 +65,9 @@ async function rawCommit(hash) {
 
 function validate() {
   if (process.env.CI !== 'true') {
+    if (IF_CI) {
+      return false;
+    }
     throw new Error(`@mixmaxhq/commitlint-jenkins is intended to be used on Jenkins CI`);
   }
 
@@ -69,4 +77,6 @@ function validate() {
     const stanza = missing.length > 1 ? 'they were not' : 'it was not';
     throw new Error(`Expected ${missing.join(', ')} to be defined globally, ${stanza}.`);
   }
+
+  return true;
 }

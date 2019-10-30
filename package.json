@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/mixmaxhq/commitlint-jenkins#readme",
   "dependencies": {
-    "execa": "^3.2.0"
+    "execa": "^3.2.0",
+    "yargs": "^14.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
