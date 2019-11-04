@@ -61,7 +61,7 @@ async function lint(args, options) {
 }
 
 async function rawCommit(hash) {
-  const result = await execa('git', ['show', '--pretty=format:%B', hash]);
+  const result = await execa('git', ['show', '-s', '--pretty=format:%B', hash]);
   return result.stdout;
 }
 
