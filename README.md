@@ -16,3 +16,9 @@ welcome [pull requests](https://github.com/mixmaxhq/commitlint-jenkins/pulls)!
 If `commitlint-jenkins` is run outside of a CI context, it will fail. This flag simply ignores the
 failure, for use-cases where `commitlint-jenkins` should be run from a script shared with a non-CI
 workflow.
+
+### `--pr-only`
+
+If `commitlint-jenkins` is run in CI in a build that isn't a pull request build, silently exit.
+This flag is particularly handy for use with
+[`@mixmaxhq/semantic-commitlint`](https://github.com/mixmaxhq/semantic-commitlint).
