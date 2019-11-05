@@ -14,8 +14,8 @@
     "ci:commitlint": "node . --pr-only",
     "lint": "eslint .",
     "prepublishOnly": "if [ \"$CI\" = '' ]; then node -p 'JSON.parse(process.env.npm_package_config_manualPublishMessage)'; exit 1; fi",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -36,9 +36,9 @@
     "yargs": "^14.2.0"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^8.2.0",
+    "@commitlint/config-conventional": "^8.3.3",
     "@mixmaxhq/prettier-config": "^1.0.0",
-    "@mixmaxhq/semantic-release-config": "^1.0.0",
+    "@mixmaxhq/semantic-release-config": "^1.1.0",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.6.0",
     "eslint-config-mixmax": "^3.4.0",
@@ -51,9 +51,7 @@
     ]
   },
   "release": {
-    "extends": [
-      "@mixmaxhq/semantic-release-config"
-    ]
+    "extends": "@mixmaxhq/semantic-release-config"
   },
   "config": {
     "commitizen": {
