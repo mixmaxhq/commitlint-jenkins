@@ -88,6 +88,7 @@ async function lintPR() {
       all: true,
     });
     console.log(`all discovered commits on ${TARGET_BRANCH} passed linter`);
+    return;
   } catch (err) {
     if (err.exitCode !== 1) {
       throw err;
