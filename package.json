@@ -29,7 +29,10 @@
   "homepage": "https://github.com/mixmaxhq/commitlint-jenkins#readme",
   "dependencies": {
     "@commitlint/cli": "^8.2.0",
+    "@octokit/rest": "^16.34.1",
     "execa": "^3.2.0",
+    "hosted-git-info": "^3.0.2",
+    "lodash": "^4.17.15",
     "yargs": "^14.2.0"
   },
   "devDependencies": {
@@ -40,7 +43,7 @@
     "eslint": "^6.6.0",
     "eslint-config-mixmax": "^3.4.0",
     "prettier": "^1.18.2",
-    "semantic-release": "^15.13.28"
+    "semantic-release": "^15.13.30"
   },
   "release": {
     "extends": [
