@@ -4,9 +4,9 @@ const argv = require('yargs').argv;
 const commitlint = require('@commitlint/cli');
 
 const IF_CI = !!argv.ifCi;
+const PR_ONLY = !!argv.prOnly;
 
-// Allow to override used bins for testing purposes
-const GIT = process.env.JENKINS_COMMITLINT_GIT_BIN || 'git';
+// Allow override of used bins for testing purposes
 const COMMITLINT = process.env.JENKINS_COMMITLINT_BIN;
 
 const REQUIRED = ['GIT_COMMIT'];
@@ -40,14 +40,16 @@ async function main() {
     // We could lint since the last successful commit, but that would require a bunch of extra logic
     // to detect changes to commitlint.config.js or related modules.
     await lint(['--from', start, '--to', COMMIT]);
-  } else {
+  } else if (!PR_ONLY) {
+    // The --pr-only flag can be useful to use semantic-commitlint on the release branch instead of
+    // just linting one commit.
     const input = await rawCommit(COMMIT);
     await lint([], { input });
   }
 }
 
 async function getBase({ branch, tip = 'HEAD' }) {
-  const result = await execa(GIT, ['merge-base', branch, tip]);
+  const result = await execa('git', ['merge-base', branch, tip]);
   return result.stdout;
 }
 
@@ -59,7 +61,7 @@ async function lint(args, options) {
 }
 
 async function rawCommit(hash) {
-  const result = await execa(GIT, ['show', '--pretty=format:%B', hash]);
+  const result = await execa('git', ['show', '-s', '--pretty=format:%B', hash]);
   return result.stdout;
 }
 

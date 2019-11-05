@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "ci": "npm run lint",
-    "lint": "eslint . && node . --if-ci",
+    "ci:commitlint": "node . --pr-only",
+    "lint": "eslint .",
     "prepublishOnly": "if [ \"$CI\" = '' ]; then node -p 'JSON.parse(process.env.npm_package_config_manualPublishMessage)'; exit 1; fi",
     "test": "echo \"Error: no test specified\" && exit 1",
     "semantic-release": "semantic-release"
