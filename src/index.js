@@ -14,6 +14,7 @@ const REQUIRED = ['GIT_COMMIT'];
 
 const COMMIT = process.env.GIT_COMMIT;
 const TARGET_BRANCH = process.env.CHANGE_TARGET;
+// Set by Jenkins Multibranch pipeline
 const CHANGE_ID = process.env.CHANGE_ID;
 const IS_PR = !!CHANGE_ID;
 
