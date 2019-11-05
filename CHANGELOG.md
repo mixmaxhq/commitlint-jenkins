@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/mixmaxhq/commitlint-jenkins/compare/v1.4.0...v1.4.1) (2019-11-05)
+
+
+### Bug Fixes
+
+* fix control flow + github auth error case ([a9e11ec](https://github.com/mixmaxhq/commitlint-jenkins/commit/a9e11ec34140f17b5165bb5386e4b9d5d210047c))
+
 # [1.4.0](https://github.com/mixmaxhq/commitlint-jenkins/compare/v1.3.0...v1.4.0) (2019-11-05)
 
 

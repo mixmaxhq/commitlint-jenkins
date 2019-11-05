@@ -1,6 +1,6 @@
 {
   "name": "@mixmaxhq/commitlint-jenkins",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Lint all relevant commits for a change or PR on Jenkins CI",
   "main": "src/index.js",
   "bin": {
