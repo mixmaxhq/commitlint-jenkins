@@ -81,6 +81,7 @@ async function lintPR() {
   // Prevent unhandled rejections.
   squashCommitPromise.catch(() => {});
 
+  let branchCommitlintOutput;
   try {
     // TODO(Eli): Check for allow_merge_commit || allow_rebase_merge on the GitHub repository if
     // accessible.
@@ -94,42 +95,42 @@ async function lintPR() {
       throw err;
     }
 
-    try {
-      const rawSquashCommit = await squashCommitPromise;
-      try {
-        await execa(COMMITLINT || commitlint, [], {
-          input: rawSquashCommit,
-          all: true,
-        });
-        console.log(`squash commit for ${TARGET_BRANCH} passed linter`);
-      } catch (errSquash) {
-        if (errSquash.code === 'ENOGITHUBAUTH') {
-          console.error('Unable to determine whether the squash commit would be valid');
-          console.error(errSquash);
-        }
-        console.error(
-          'Neither the commits in the pull request nor the pull request description are valid according to commitlint'
-        );
-        console.error('Errors found with squash commit');
-        console.group();
-        console.error(errSquash.all);
-        console.groupEnd();
-        console.error('Errors found in branch commits');
-        console.group();
-        console.error(err.all);
-        console.groupEnd();
-        throw errSquash;
-      }
-    } catch (errSquash) {
-      if (errSquash.code === 'ENOGITHUBAUTH') {
-        console.error('Unable to determine whether the squash commit would be valid');
-        console.error(errSquash);
-        console.error();
-        console.error(err.all);
-      } else {
-        throw errSquash;
-      }
+    branchCommitlintOutput = err.all;
+  }
+
+  let rawSquashCommit;
+  try {
+    rawSquashCommit = await squashCommitPromise;
+  } catch (err) {
+    if (err.code === 'ENOGITHUBAUTH') {
+      console.error('Unable to determine whether the squash commit would be valid');
+      console.error(err);
+      console.error();
+      console.error(branchCommitlintOutput);
     }
+    throw err;
+  }
+
+  try {
+    await execa(COMMITLINT || commitlint, [], {
+      input: rawSquashCommit,
+      all: true,
+    });
+    console.log(`squash commit for ${TARGET_BRANCH} passed linter`);
+    return;
+  } catch (err) {
+    console.error(
+      'Neither the commits in the pull request nor the pull request description are valid according to commitlint'
+    );
+    console.error('Errors found with squash commit');
+    console.group();
+    console.error(err.all);
+    console.groupEnd();
+    console.error('Errors found in branch commits');
+    console.group();
+    console.error(branchCommitlintOutput);
+    console.groupEnd();
+    throw err;
   }
 }
 
