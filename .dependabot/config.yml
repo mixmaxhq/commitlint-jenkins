@@ -1,0 +1,24 @@
+version: 1
+update_configs:
+  - package_manager: 'javascript'
+    directory: '/'
+    update_schedule: 'live'
+    version_requirement_updates: 'increase_versions'
+    automerged_updates:
+      - match:
+          dependency_name: '@commitlint/config-conventional'
+      - match:
+          dependency_name: '@mixmaxhq/prettier-config'
+      - match:
+          dependency_name: '@mixmaxhq/semantic-release-config'
+      - match:
+          dependency_name: 'cz-conventional-changelog'
+      - match:
+          dependency_name: 'eslint'
+      - match:
+          dependency_name: 'eslint-config-mixmax'
+      - match:
+          dependency_name: 'prettier'
+    commit_message:
+      prefix: 'chore'
+      include_scope: true
