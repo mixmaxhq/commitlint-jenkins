@@ -30,7 +30,7 @@
   "dependencies": {
     "@commitlint/cli": "^8.2.0",
     "@octokit/rest": "^16.34.1",
-    "execa": "^3.2.0",
+    "execa": "^3.4.0",
     "hosted-git-info": "^3.0.2",
     "lodash": "^4.17.15",
     "yargs": "^14.2.0"
