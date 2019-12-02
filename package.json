@@ -38,7 +38,7 @@
   "devDependencies": {
     "@commitlint/config-conventional": "^8.3.3",
     "@mixmaxhq/prettier-config": "^1.0.0",
-    "@mixmaxhq/semantic-release-config": "^1.2.3",
+    "@mixmaxhq/semantic-release-config": "^1.2.4",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.6.0",
     "eslint-config-mixmax": "^4.1.0",
