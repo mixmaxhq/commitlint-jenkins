@@ -36,7 +36,7 @@
     "yargs": "^14.2.0"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^8.3.3",
+    "@commitlint/config-conventional": "^8.3.4",
     "@mixmaxhq/prettier-config": "^1.0.0",
     "@mixmaxhq/semantic-release-config": "^1.2.5",
     "cz-conventional-changelog": "^3.0.2",
