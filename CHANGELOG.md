@@ -1,3 +1,10 @@
+### [1.4.2](https://github.com/mixmaxhq/commitlint-jenkins/compare/v1.4.1...v1.4.2) (2020-01-13)
+
+
+### Bug Fixes
+
+* **deps:** bump @commitlint/cli from 8.2.0 to 8.3.4 ([#39](https://github.com/mixmaxhq/commitlint-jenkins/issues/39)) ([39c9aea](https://github.com/mixmaxhq/commitlint-jenkins/commit/39c9aea463fd6af63bb42cca563e28e655f8fea2))
+
 ## [1.4.1](https://github.com/mixmaxhq/commitlint-jenkins/compare/v1.4.0...v1.4.1) (2019-11-05)
 
 
