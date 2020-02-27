@@ -1,3 +1,10 @@
+### [1.4.3](https://github.com/mixmaxhq/commitlint-jenkins/compare/v1.4.2...v1.4.3) (2020-02-27)
+
+
+### Bug Fixes
+
+* use non-deprecated import for octokit ([5cc10d0](https://github.com/mixmaxhq/commitlint-jenkins/commit/5cc10d0ea0328a8d73e35ffaf25c7d747a8cf3ec))
+
 ### [1.4.2](https://github.com/mixmaxhq/commitlint-jenkins/compare/v1.4.1...v1.4.2) (2020-01-13)
 
 
