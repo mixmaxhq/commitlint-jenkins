@@ -1,5 +1,5 @@
 const execa = require('execa');
-const Octokit = require('@octokit/rest');
+const { Octokit } = require('@octokit/rest');
 const hostedGitInfo = require('hosted-git-info');
 const { version } = require('../package.json');
 const { getReleaseConfig } = require('./utils');
