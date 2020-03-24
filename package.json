@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/mixmaxhq/commitlint-jenkins#readme",
   "dependencies": {
-    "@octokit/rest": "^16.34.1",
+    "@octokit/rest": "^17.1.2",
     "execa": "^3.2.0",
     "hosted-git-info": "^3.0.2",
     "lodash": "^4.17.15",
