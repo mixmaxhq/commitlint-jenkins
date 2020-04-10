@@ -1,3 +1,10 @@
+### [1.4.4](https://github.com/mixmaxhq/commitlint-jenkins/compare/v1.4.3...v1.4.4) (2020-04-10)
+
+
+### Bug Fixes
+
+* **deps:** upgrade @octokit/rest ([cfd6eec](https://github.com/mixmaxhq/commitlint-jenkins/commit/cfd6eecaa608a05b74a3449432cd0dd2ef5df7db))
+
 ### [1.4.3](https://github.com/mixmaxhq/commitlint-jenkins/compare/v1.4.2...v1.4.3) (2020-02-27)
 
 
