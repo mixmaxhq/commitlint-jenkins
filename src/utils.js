@@ -1,5 +1,11 @@
-const getConfig = require('semantic-release/lib/get-config');
-const getLogger = require('semantic-release/lib/get-logger');
+let getConfig = null,
+  getLogger = null;
+try {
+  getConfig = require('semantic-release/lib/get-config');
+  getLogger = require('semantic-release/lib/get-logger');
+} catch (err) {
+  if (err.code !== 'MODULE_NOT_FOUND') throw err;
+}
 const { Writable } = require('stream');
 
 const devNull = () =>
@@ -15,6 +21,10 @@ const devNull = () =>
  * @return {Promise<Object>} The configuration object, which includes an options field among others.
  */
 async function getReleaseConfig() {
+  if (!getLogger || !getConfig) {
+    throw new Error('cannot get release config - semantic-release not available');
+  }
+
   const context = {
     cwd: process.cwd(),
     // The logger logs a bunch of unhelpful stuff when loading plugins, and we're only loading
