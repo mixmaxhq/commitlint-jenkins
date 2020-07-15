@@ -1,3 +1,10 @@
+### [1.4.5](https://github.com/mixmaxhq/commitlint-jenkins/compare/v1.4.4...v1.4.5) (2020-07-15)
+
+
+### Bug Fixes
+
+* **deps:** [CORE-2949] depend on commitlint cli again ([#137](https://github.com/mixmaxhq/commitlint-jenkins/issues/137)) ([d92712a](https://github.com/mixmaxhq/commitlint-jenkins/commit/d92712a06ca39673937a166d1d8675f818962a98))
+
 ### [1.4.4](https://github.com/mixmaxhq/commitlint-jenkins/compare/v1.4.3...v1.4.4) (2020-04-10)
 
 
