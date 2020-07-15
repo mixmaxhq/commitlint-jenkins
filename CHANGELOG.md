@@ -1,3 +1,10 @@
+## [1.5.0](https://github.com/mixmaxhq/commitlint-jenkins/compare/v1.4.5...v1.5.0) (2020-07-15)
+
+
+### Features
+
+* [CORE-2949] support disallowing squash merges ([#138](https://github.com/mixmaxhq/commitlint-jenkins/issues/138)) ([62c3785](https://github.com/mixmaxhq/commitlint-jenkins/commit/62c3785a793dc3402831e81a9d910eff818d3b57))
+
 ### [1.4.5](https://github.com/mixmaxhq/commitlint-jenkins/compare/v1.4.4...v1.4.5) (2020-07-15)
 
 
