@@ -33,7 +33,7 @@
     "execa": "^3.2.0",
     "hosted-git-info": "^3.0.2",
     "lodash": "^4.17.15",
-    "yargs": "^14.2.0"
+    "yargs": "^15.4.1"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^8.3.4",
