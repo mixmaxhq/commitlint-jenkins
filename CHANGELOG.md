@@ -1,3 +1,10 @@
+### [1.5.1](https://github.com/mixmaxhq/commitlint-jenkins/compare/v1.5.0...v1.5.1) (2020-07-15)
+
+
+### Bug Fixes
+
+* support invocation without semantic-release ([#139](https://github.com/mixmaxhq/commitlint-jenkins/issues/139)) ([a064464](https://github.com/mixmaxhq/commitlint-jenkins/commit/a06446444af8cd6836df4441d9db2a7453b97585))
+
 ## [1.5.0](https://github.com/mixmaxhq/commitlint-jenkins/compare/v1.4.5...v1.5.0) (2020-07-15)
 
 
