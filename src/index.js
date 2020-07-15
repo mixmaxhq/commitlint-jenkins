@@ -6,6 +6,7 @@ const buildSquashCommit = require('./build-squash-commit');
 
 const IF_CI = !!argv.ifCi;
 const PR_ONLY = !!argv.prOnly;
+const ALLOW_SQUASH = !!argv.allowSquash;
 
 // Allow override of used bins for testing purposes
 const COMMITLINT = process.env.JENKINS_COMMITLINT_BIN;
@@ -73,13 +74,17 @@ async function lintPR() {
 
   // Kick off the work to figure out the appropriate squash commit. We may not use it, provided
   // the commit range itself consists of valid commits.
-  const squashCommitPromise = buildSquashCommit({
-    pullNumber: parseInt(CHANGE_ID, 10),
-    ...range,
-  });
+  const squashCommitPromise = ALLOW_SQUASH
+    ? buildSquashCommit({
+        pullNumber: parseInt(CHANGE_ID, 10),
+        ...range,
+      })
+    : null;
 
   // Prevent unhandled rejections.
-  squashCommitPromise.catch(() => {});
+  if (squashCommitPromise) {
+    squashCommitPromise.catch(() => {});
+  }
 
   let branchCommitlintOutput;
   try {
@@ -95,6 +100,13 @@ async function lintPR() {
       throw err;
     }
 
+    if (!ALLOW_SQUASH) {
+      console.error('Errors found in branch commits');
+      console.group();
+      console.error(err.all);
+      console.groupEnd();
+      throw err;
+    }
     branchCommitlintOutput = err.all;
   }
 
