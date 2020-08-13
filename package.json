@@ -32,7 +32,7 @@
     "@octokit/rest": "^17.2.0",
     "execa": "^3.2.0",
     "hosted-git-info": "^3.0.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.20",
     "yargs": "^14.2.0"
   },
   "devDependencies": {
