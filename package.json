@@ -21,7 +21,7 @@
     "type": "git",
     "url": "https://github.com/mixmaxhq/commitlint-jenkins.git"
   },
-  "author": "Eli Skeggs <eli@mixmax.com> (https://mixmax.com)",
+  "author": "Mixmax <hello@mixmax.com> (https://mixmax.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mixmaxhq/commitlint-jenkins/issues"
@@ -61,6 +61,6 @@
     "manualPublishMessage": "This repository is configured to use semantic-release for its releases. Please do not release manually.\n"
   },
   "publishConfig": {
-    "access": "restricted"
+    "access": "public"
   }
 }
