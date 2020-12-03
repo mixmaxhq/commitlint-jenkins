@@ -1,3 +1,10 @@
+## [1.6.0](https://github.com/mixmaxhq/commitlint-jenkins/compare/v1.5.1...v1.6.0) (2020-12-03)
+
+
+### Features
+
+* make module public ([a5499da](https://github.com/mixmaxhq/commitlint-jenkins/commit/a5499da22e68e6a916de9144a97f36fa5c2e2f9a))
+
 ### [1.5.1](https://github.com/mixmaxhq/commitlint-jenkins/compare/v1.5.0...v1.5.1) (2020-07-15)
 
 
